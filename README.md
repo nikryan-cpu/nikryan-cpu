@@ -1,1 +1,1 @@
-![Snake animation](https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/{nikryan-cpu}/{nikryan-cpu}/output/github-contribution-grid-snake-dark.svg)
