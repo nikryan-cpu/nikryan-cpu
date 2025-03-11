@@ -4,24 +4,25 @@ on:
   schedule:
     - cron: "0 */12 * * *" # каждые 12 часов
   workflow_dispatch:
-  
-# Добавьте эти строки для предоставления необходимых разрешений
+
+# Необходимые разрешения для работы с репозиторием
 permissions:
   contents: write
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      
-      - uses: Platane/snk@master
-        id: snake-gif
+      - uses: actions/checkout@v3
+
+      - name: Generate Snake
+        uses: Platane/snk/svg-only@v2
         with:
-          github_user_name: ${{ github.repository_owner }}
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          github_user_name: nikryan-cpu
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v2.5.0
